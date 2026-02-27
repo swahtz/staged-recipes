@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  version: "0.0.19"
+
+package:
+  name: nanovdb-editor
+  version: ${{ version }}
+
+source:
+  url: https://github.com/openvdb/nanovdb-editor/archive/v${{ version }}.tar.gz
+  sha256: 4da2f1e13202838c0c482ac86f3fe8b2c2c4df191e7c55451890f11e0a6011d0
+
+build:
+  number: 0
+  skip:
+    - win or osx
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - cmake >=3.25
+    - ninja
+    - pkg-config
+    - git
+  host:
+    - python
+    - pip
+    - scikit-build-core
+    - numpy >=1.19
+  run:
+    - python
+    - numpy
+
+tests:
+  - files:
+      recipe:
+        - run_test.py
+    requirements:
+      run:
+        - pip
+    script:
+      - pip check
+      - python run_test.py
+
+about:
+  homepage: https://github.com/openvdb/nanovdb-editor
+  summary: NanoVDB Editor Python module for volume rendering and Gaussian splatting
+  description: |
+    Python bindings for the NanoVDB Editor, a Vulkan-based volume rendering
+    and editing tool from the OpenVDB project. Supports headless rendering,
+    streaming, and shader-based visualization of NanoVDB volumes.
+  license: Apache-2.0
+  license_file: LICENSE
+  repository: https://github.com/openvdb/nanovdb-editor
+
+extra:
+  recipe-maintainers:
+    - swahtz
