@@ -23,6 +23,7 @@ requirements:
     - ${{ stdlib('c') }}
     - cmake >=3.25
     - ninja
+    - make
     - pkg-config
     - git
   host:
