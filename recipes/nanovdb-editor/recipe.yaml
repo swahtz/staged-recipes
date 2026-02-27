@@ -36,16 +36,10 @@ requirements:
     - numpy
 
 tests:
-  - files:
-      recipe:
-        - run_test.py
-    requirements:
-      run:
-        - pip
-    script:
-      - pip check
-      - python run_test.py
-
+  - python:
+      pip_check: true
+      imports:
+        - nanovdb_editor
 about:
   homepage: https://github.com/openvdb/nanovdb-editor
   summary: NanoVDB Editor Python module for volume rendering and Gaussian splatting
