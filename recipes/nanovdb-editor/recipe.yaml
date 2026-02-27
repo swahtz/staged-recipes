@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.0.19"
+  version: "0.0.9"
 
 package:
   name: nanovdb-editor
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/openvdb/nanovdb-editor/archive/v${{ version }}.tar.gz
-  sha256: 4da2f1e13202838c0c482ac86f3fe8b2c2c4df191e7c55451890f11e0a6011d0
+  sha256: 194c0fd61d516c8a03de414764db568bf5029235678a1e43977afea1b7fed05c
 
 build:
   number: 0
