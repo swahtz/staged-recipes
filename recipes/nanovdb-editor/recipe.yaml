@@ -30,7 +30,7 @@ requirements:
     - python
     - pip
     - scikit-build-core
-    - numpy >=1.19
+    - numpy
   run:
     - python
     - numpy
